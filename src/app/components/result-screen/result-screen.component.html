@@ -14,7 +14,11 @@
 
   <div class="actions">
     <button class="btn-share" (click)="shareResult()">📋 Ergebnis teilen</button>
+    <button class="btn-next" *ngIf="isEndless" (click)="nextRound()">
+      ▶ Nächste Runde
+    </button>
   </div>
 
-  <p class="next-hint">Das nächste Rätsel erscheint morgen!</p>
+  <p class="next-hint" *ngIf="!isEndless">Das nächste Rätsel erscheint morgen!</p>
+  <p class="next-hint" *ngIf="isEndless">Endlos-Modus – Runde {{ round }}</p>
 </div>

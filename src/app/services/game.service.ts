@@ -6,28 +6,40 @@ import {
 import { POLITICIANS } from '../data/politicians';
 
 export const MAX_GUESSES = 8;
+export type GameMode = 'daily' | 'endless';
 
 @Injectable({ providedIn: 'root' })
 export class GameService {
   readonly allPoliticians = POLITICIANS;
 
+  private readonly _mode = signal<GameMode>('daily');
   private readonly _targetPolitician = signal<Politician>(this.pickDailyPolitician());
   private readonly _guesses = signal<GuessComparison[]>([]);
   private readonly _gameOver = signal(false);
   private readonly _won = signal(false);
+  private _lastEndlessId: string | null = null;
+  private _endlessRound = signal(0);
 
+  readonly mode = this._mode.asReadonly();
   readonly targetPolitician = this._targetPolitician.asReadonly();
   readonly guesses = this._guesses.asReadonly();
   readonly gameOver = this._gameOver.asReadonly();
   readonly won = this._won.asReadonly();
   readonly guessCount = computed(() => this._guesses().length);
   readonly remainingGuesses = computed(() => MAX_GUESSES - this._guesses().length);
+  readonly endlessRound = this._endlessRound.asReadonly();
 
   private pickDailyPolitician(): Politician {
     const today = new Date();
     const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-    const index = seed % POLITICIANS.length;
-    return POLITICIANS[index];
+    return POLITICIANS[seed % POLITICIANS.length];
+  }
+
+  private pickRandomPolitician(): Politician {
+    const pool = POLITICIANS.filter(p => p.id !== this._lastEndlessId);
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    this._lastEndlessId = pick.id;
+    return pick;
   }
 
   getFilteredPoliticians(query: string): Politician[] {
@@ -53,11 +65,31 @@ export class GameService {
     }
   }
 
-  resetGame(): void {
+  switchToDaily(): void {
+    this._mode.set('daily');
     this._guesses.set([]);
     this._gameOver.set(false);
     this._won.set(false);
+    this._endlessRound.set(0);
     this._targetPolitician.set(this.pickDailyPolitician());
+  }
+
+  switchToEndless(): void {
+    this._mode.set('endless');
+    this._guesses.set([]);
+    this._gameOver.set(false);
+    this._won.set(false);
+    this._endlessRound.set(1);
+    this._lastEndlessId = null;
+    this._targetPolitician.set(this.pickRandomPolitician());
+  }
+
+  nextEndlessRound(): void {
+    this._guesses.set([]);
+    this._gameOver.set(false);
+    this._won.set(false);
+    this._endlessRound.update(r => r + 1);
+    this._targetPolitician.set(this.pickRandomPolitician());
   }
 
   private compare(guess: Politician, target: Politician): GuessComparison {

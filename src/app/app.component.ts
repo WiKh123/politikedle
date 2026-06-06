@@ -17,4 +17,9 @@ export class AppComponent {
 
   get guesses() { return this.gameService.guesses(); }
   get gameOver() { return this.gameService.gameOver(); }
+  get mode() { return this.gameService.mode(); }
+  get endlessRound() { return this.gameService.endlessRound(); }
+
+  switchToDaily() { this.gameService.switchToDaily(); }
+  switchToEndless() { this.gameService.switchToEndless(); }
 }

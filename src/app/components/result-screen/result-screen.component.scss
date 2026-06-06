@@ -41,6 +41,20 @@ p {
   margin-top: 1.5rem;
 }
 
+.btn-next {
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: #a6e3a1;
+  color: #1e1e2e;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover { background: #c3f0bf; }
+}
+
 .btn-share {
   padding: 0.7rem 1.4rem;
   font-size: 0.95rem;

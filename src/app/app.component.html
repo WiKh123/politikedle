@@ -3,6 +3,21 @@
   <header class="header">
     <h1 class="title">🇩🇪 Politikedle</h1>
     <p class="subtitle">Errate den deutschen Politiker des Tages!</p>
+
+    <!-- Mode toggle -->
+    <div class="mode-toggle">
+      <button
+        class="mode-btn"
+        [class.active]="mode === 'daily'"
+        (click)="switchToDaily()"
+      >📅 Täglich</button>
+      <button
+        class="mode-btn"
+        [class.active]="mode === 'endless'"
+        (click)="switchToEndless()"
+      >♾️ Endlos</button>
+    </div>
+    <p class="mode-hint" *ngIf="mode === 'endless'">Runde {{ endlessRound }}</p>
   </header>
 
   <!-- Legend -->
@@ -45,8 +60,8 @@
       <li><span class="leg-item correct sm">Grün</span> = exakt richtig</li>
       <li><span class="leg-item partial sm">Gelb</span> = teilweise richtig (gleiche Parteienfamilie / gleiches Bundesland-Gebiet)</li>
       <li><span class="leg-item wrong sm">Grau</span> = falsch</li>
-      <li>Beim Geburtsjahr zeigt ein Pfeil ↑/↓, ob der Gesuchte älter oder jünger ist.</li>
-      <li>Du hast <strong>8 Versuche</strong>. Viel Erfolg!</li>
+      <li>Beim Geburtsjahr zeigt ein Pfeil ↑/↓, ob der Gesuchte jünger oder älter ist.</li>
+      <li>Du hast <strong>8 Versuche</strong> pro Runde. Viel Erfolg!</li>
     </ul>
   </details>
 </div>

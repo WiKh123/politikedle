@@ -15,6 +15,12 @@ export class ResultScreenComponent {
   get won() { return this.gameService.won(); }
   get target() { return this.gameService.targetPolitician(); }
   get guessCount() { return this.gameService.guessCount(); }
+  get isEndless() { return this.gameService.mode() === 'endless'; }
+  get round() { return this.gameService.endlessRound(); }
+
+  nextRound(): void {
+    this.gameService.nextEndlessRound();
+  }
 
   shareResult(): void {
     const guesses = this.gameService.guesses();
@@ -24,7 +30,8 @@ export class ResultScreenComponent {
         .map(r => emojiMap[r])
         .join('')
     );
-    const text = `🇩🇪 Politikedle – ${new Date().toLocaleDateString('de-DE')}\n${this.won ? `✅ ${this.guessCount}/${8}` : `❌ X/8`}\n\n${lines.join('\n')}`;
+    const mode = this.isEndless ? `Endlos Runde ${this.round}` : new Date().toLocaleDateString('de-DE');
+    const text = `🇩🇪 Politikedle – ${mode}\n${this.won ? `✅ ${this.guessCount}/8` : '❌ X/8'}\n\n${lines.join('\n')}`;
     navigator.clipboard.writeText(text).then(() => alert('Ergebnis kopiert!'));
   }
 }
