@@ -26,4 +26,5 @@ export class AppComponent {
   switchToDaily()   { this.gameService.switchToDaily(); }
   switchToEndless() { this.gameService.switchToEndless(); }
   switchToPhoto()   { this.gameService.switchToPhoto(); }
+  switchToQuote()   { this.gameService.switchToQuote(); }
 }

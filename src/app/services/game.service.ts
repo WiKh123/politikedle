@@ -6,7 +6,7 @@ import {
 import { POLITICIANS } from '../data/politicians';
 
 export const MAX_GUESSES = 8;
-export type GameMode = 'daily' | 'endless' | 'photo';
+export type GameMode = 'daily' | 'endless' | 'photo' | 'quote';
 
 @Injectable({ providedIn: 'root' })
 export class GameService {
@@ -39,11 +39,15 @@ export class GameService {
     return POLITICIANS[seed % POLITICIANS.length];
   }
 
-  private pickRandomPolitician(): Politician {
-    const pool = POLITICIANS.filter(p => p.id !== this._lastRandomId);
-    const pick = pool[Math.floor(Math.random() * pool.length)];
+  private pickRandomPolitician(pool: Politician[] = POLITICIANS): Politician {
+    const filtered = pool.filter(p => p.id !== this._lastRandomId);
+    const pick = filtered[Math.floor(Math.random() * filtered.length)];
     this._lastRandomId = pick.id;
     return pick;
+  }
+
+  private get quotablePool(): Politician[] {
+    return POLITICIANS.filter(p => !!p.quote);
   }
 
   getFilteredPoliticians(query: string): Politician[] {
@@ -89,9 +93,17 @@ export class GameService {
     this.resetState(this.pickRandomPolitician());
   }
 
+  switchToQuote(): void {
+    this._mode.set('quote');
+    this._lastRandomId = null;
+    this._round.set(1);
+    this.resetState(this.pickRandomPolitician(this.quotablePool));
+  }
+
   nextRound(): void {
     this._round.update(r => r + 1);
-    this.resetState(this.pickRandomPolitician());
+    const pool = this._mode() === 'quote' ? this.quotablePool : POLITICIANS;
+    this.resetState(this.pickRandomPolitician(pool));
   }
 
   private resetState(target: Politician): void {

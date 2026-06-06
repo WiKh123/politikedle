@@ -25,5 +25,5 @@
   </div>
 
   <p class="next-hint" *ngIf="!isEndless">Das nächste Rätsel erscheint morgen!</p>
-  <p class="next-hint" *ngIf="isEndless">{{ mode === 'photo' ? '📷' : '♾️' }} Runde {{ round }}</p>
+  <p class="next-hint" *ngIf="isEndless">{{ mode === 'photo' ? '📷' : mode === 'quote' ? '💬' : '♾️' }} Runde {{ round }}</p>
 </div>

@@ -28,6 +28,7 @@ export interface Politician {
   position: PositionLevel;
   birthYear: number;
   gender: Gender;
+  quote?: string;
 }
 
 export type CompareResult = 'correct' | 'partial' | 'wrong';

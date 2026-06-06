@@ -67,6 +67,38 @@
   font-weight: 600;
 }
 
+// Quote stage
+.quote-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quote-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #cdd6f4;
+  margin: 0;
+}
+
+.politician-quote {
+  background: #181825;
+  border-left: 4px solid #89b4fa;
+  border-radius: 6px;
+  margin: 0;
+  padding: 1rem 1.25rem;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #cdd6f4;
+  line-height: 1.6;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 // Photo stage
 .photo-stage {
   display: flex;

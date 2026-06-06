@@ -32,7 +32,8 @@ export class ResultScreenComponent {
     const modeLabel =
       this.mode === 'daily'   ? new Date().toLocaleDateString('de-DE') :
       this.mode === 'endless' ? `Endlos R.${this.round}` :
-                                `Foto R.${this.round}`;
+      this.mode === 'photo'   ? `Foto R.${this.round}` :
+                                `Zitat R.${this.round}`;
     const text = `🇩🇪 Politikedle – ${modeLabel}\n${this.won ? `✅ ${this.guessCount}/8` : '❌ X/8'}\n\n${lines.join('\n')}`;
     navigator.clipboard.writeText(text).then(() => alert('Ergebnis kopiert!'));
   }

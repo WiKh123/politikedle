@@ -8,9 +8,16 @@
       <button class="mode-btn" [class.active]="mode === 'daily'"   (click)="switchToDaily()">📅 Täglich</button>
       <button class="mode-btn" [class.active]="mode === 'endless'" (click)="switchToEndless()">♾️ Endlos</button>
       <button class="mode-btn" [class.active]="mode === 'photo'"   (click)="switchToPhoto()">📷 Foto-Modus</button>
+      <button class="mode-btn" [class.active]="mode === 'quote'"   (click)="switchToQuote()">💬 Zitat</button>
     </div>
     <p class="mode-hint" *ngIf="mode !== 'daily'">Runde {{ endlessRound }}</p>
   </header>
+
+  <!-- Quote mode: show politician quote as hint -->
+  <div class="quote-stage" *ngIf="mode === 'quote' && !gameOver">
+    <p class="quote-label">💬 Wer sagte das?</p>
+    <blockquote class="politician-quote">"{{ target.quote }}"</blockquote>
+  </div>
 
   <!-- Photo mode: show blurred image during game -->
   <div class="photo-stage" *ngIf="mode === 'photo' && !gameOver">
@@ -58,6 +65,7 @@
       <li><strong>Täglich:</strong> Ein fixer Politiker pro Tag.</li>
       <li><strong>Endlos:</strong> Beliebig viele zufällige Runden.</li>
       <li><strong>Foto-Modus:</strong> Erkenne den Politiker anhand seines Fotos – es wird mit jedem Versuch schärfer.</li>
+      <li><strong>Zitat-Modus:</strong> Ein bekanntes Zitat wird als Hinweis angezeigt. Errate, wer es gesagt hat!</li>
       <li><span class="leg-item correct sm">Grün</span> = exakt richtig &nbsp;
           <span class="leg-item partial sm">Gelb</span> = teilweise richtig &nbsp;
           <span class="leg-item wrong sm">Grau</span> = falsch</li>
