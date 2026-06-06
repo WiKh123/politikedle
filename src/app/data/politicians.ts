@@ -50,6 +50,14 @@ export const POLITICIANS: Politician[] = [
   { id: 'heil',             name: 'Hubertus Heil',               party: 'SPD', state: 'Niedersachsen',           position: 'Bundesminister/in',        birthYear: 1972, gender: 'männlich' },
 
   { id: 'mützenich',        name: 'Rolf Mützenich',              party: 'SPD', state: 'Nordrhein-Westfalen',     position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1959, gender: 'männlich' },
+  { id: 'kühnert',          name: 'Kevin Kühnert',               party: 'SPD', state: 'Berlin',                  position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1989, gender: 'männlich',
+    quote: '»Ohne Marx keine Marktwirtschaft – aber ohne Marktkritik auch kein Fortschritt.«' },
+  { id: 'giffey',           name: 'Franziska Giffey',            party: 'SPD', state: 'Berlin',                  position: 'Ministerpräsident/in',     birthYear: 1978, gender: 'weiblich' },
+  { id: 'schneider-c',      name: 'Carsten Schneider',           party: 'SPD', state: 'Thüringen',               position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1976, gender: 'männlich' },
+  { id: 'barley',           name: 'Katarina Barley',             party: 'SPD', state: 'Rheinland-Pfalz',         position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1968, gender: 'weiblich' },
+  { id: 'roth-m',           name: 'Michael Roth',                party: 'SPD', state: 'Hessen',                  position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1970, gender: 'männlich' },
+  { id: 'chebli',           name: 'Sawsan Chebli',               party: 'SPD', state: 'Berlin',                  position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1978, gender: 'weiblich',
+    quote: '»Meine Eltern kamen als Flüchtlinge – und ich bin jetzt Staatssekretärin. Das ist Deutschland.«' },
 
   { id: 'wowereit',         name: 'Klaus Wowereit',              party: 'SPD', state: 'Berlin',                  position: 'Ministerpräsident/in',     birthYear: 1953, gender: 'männlich',
     quote: '»Ich bin schwul, und das ist auch gut so.«' },
@@ -102,6 +110,13 @@ export const POLITICIANS: Politician[] = [
 
   { id: 'röttgen',          name: 'Norbert Röttgen',             party: 'CDU', state: 'Nordrhein-Westfalen',     position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1965, gender: 'männlich' },
   { id: 'klöckner',         name: 'Julia Klöckner',              party: 'CDU', state: 'Rheinland-Pfalz',         position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1972, gender: 'weiblich' },
+  { id: 'linnemann',        name: 'Carsten Linnemann',           party: 'CDU', state: 'Nordrhein-Westfalen',     position: 'Parteivorsitzende/r',      birthYear: 1977, gender: 'männlich',
+    quote: '»Wer nicht arbeitet, obwohl er kann, der soll vom Staat auch nicht alimentiert werden.«' },
+  { id: 'amthor',           name: 'Philipp Amthor',              party: 'CDU', state: 'Mecklenburg-Vorpommern', position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1992, gender: 'männlich' },
+  { id: 'frei-t',           name: 'Thorsten Frei',               party: 'CDU', state: 'Baden-Württemberg',       position: 'Bundesminister/in',        birthYear: 1973, gender: 'männlich' },
+  { id: 'kauder',           name: 'Volker Kauder',               party: 'CDU', state: 'Baden-Württemberg',       position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1949, gender: 'männlich' },
+  { id: 'ziemiak',          name: 'Paul Ziemiak',                party: 'CDU', state: 'Nordrhein-Westfalen',     position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1985, gender: 'männlich' },
+  { id: 'gröhe',            name: 'Hermann Gröhe',               party: 'CDU', state: 'Nordrhein-Westfalen',     position: 'Bundesminister/in',        birthYear: 1961, gender: 'männlich' },
 
   { id: 'laschet',          name: 'Armin Laschet',               party: 'CDU', state: 'Nordrhein-Westfalen',     position: 'Ministerpräsident/in',     birthYear: 1961, gender: 'männlich',
     quote: '»Das wird alles gut.«' },
@@ -126,6 +141,13 @@ export const POLITICIANS: Politician[] = [
     quote: '»Das ist meine Heimat!«' },
   { id: 'guttenberg',       name: 'Karl-Theodor zu Guttenberg',  party: 'CSU', state: 'Bayern',                  position: 'Bundesminister/in',        birthYear: 1971, gender: 'männlich',
     quote: '»Ich bin kein Betrüger.«' },
+  { id: 'dobrindt',         name: 'Alexander Dobrindt',          party: 'CSU', state: 'Bayern',                  position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1970, gender: 'männlich',
+    quote: '»Wir brauchen eine konservative Revolution in Deutschland.«' },
+  { id: 'scheuer',          name: 'Andreas Scheuer',             party: 'CSU', state: 'Bayern',                  position: 'Bundesminister/in',        birthYear: 1974, gender: 'männlich',
+    quote: '»Die Maut kommt – das ist mein Wort als Minister.«' },
+  { id: 'aigner',           name: 'Ilse Aigner',                 party: 'CSU', state: 'Bayern',                  position: 'Bundesminister/in',        birthYear: 1964, gender: 'weiblich' },
+  { id: 'bär',              name: 'Dorothee Bär',                party: 'CSU', state: 'Bayern',                  position: 'Bundesminister/in',        birthYear: 1978, gender: 'weiblich',
+    quote: '»Mit dem Flugtaxi zur Arbeit – das ist keine Utopie.«' },
 
   // ── Grüne ─────────────────────────────────────────────────────────────────
   { id: 'kelly',            name: 'Petra Kelly',                 party: 'Grüne', state: 'Bayern',                position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1947, gender: 'weiblich',
@@ -148,6 +170,12 @@ export const POLITICIANS: Politician[] = [
     quote: '»Außenpolitik ist Gesellschaftspolitik.«' },
   { id: 'nouripour',        name: 'Omid Nouripour',              party: 'Grüne', state: 'Hessen',                position: 'Parteivorsitzende/r',      birthYear: 1975, gender: 'männlich' },
   { id: 'lang',             name: 'Ricarda Lang',                party: 'Grüne', state: 'Baden-Württemberg',     position: 'Parteivorsitzende/r',      birthYear: 1994, gender: 'weiblich' },
+  { id: 'hasselmann',       name: 'Britta Haßelmann',            party: 'Grüne', state: 'Nordrhein-Westfalen',   position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1963, gender: 'weiblich' },
+  { id: 'banaszak',         name: 'Felix Banaszak',              party: 'Grüne', state: 'Nordrhein-Westfalen',   position: 'Parteivorsitzende/r',      birthYear: 1988, gender: 'männlich' },
+  { id: 'paus',             name: 'Lisa Paus',                   party: 'Grüne', state: 'Berlin',               position: 'Bundesminister/in',        birthYear: 1969, gender: 'weiblich' },
+  { id: 'brantner',         name: 'Franziska Brantner',          party: 'Grüne', state: 'Baden-Württemberg',     position: 'Parteivorsitzende/r',      birthYear: 1979, gender: 'weiblich' },
+  { id: 'fester',           name: 'Emilia Fester',               party: 'Grüne', state: 'Hamburg',              position: 'MdB / Fraktionsvorsitzende/r', birthYear: 2000, gender: 'weiblich' },
+  { id: 'kindler',          name: 'Sven-Christian Kindler',      party: 'Grüne', state: 'Niedersachsen',         position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1985, gender: 'männlich' },
 
   // ── FDP ──────────────────────────────────────────────────────────────────
   { id: 'heuss',            name: 'Theodor Heuss',               party: 'FDP', state: 'Baden-Württemberg',       position: 'Bundespräsident/in',        birthYear: 1884, gender: 'männlich',
@@ -168,6 +196,11 @@ export const POLITICIANS: Politician[] = [
   { id: 'wissing',          name: 'Volker Wissing',              party: 'FDP', state: 'Rheinland-Pfalz',         position: 'Bundesminister/in',        birthYear: 1970, gender: 'männlich' },
   { id: 'lindner',          name: 'Christian Lindner',           party: 'FDP', state: 'Nordrhein-Westfalen',     position: 'Parteivorsitzende/r',      birthYear: 1979, gender: 'männlich',
     quote: '»Es ist besser, nicht zu regieren, als falsch zu regieren.«' },
+  { id: 'strack-zimmermann', name: 'Marie-Agnes Strack-Zimmermann', party: 'FDP', state: 'Nordrhein-Westfalen', position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1958, gender: 'weiblich',
+    quote: '»Wir müssen jetzt liefern – nicht irgendwann.«' },
+  { id: 'vogel-j',          name: 'Johannes Vogel',              party: 'FDP', state: 'Nordrhein-Westfalen',     position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1986, gender: 'männlich' },
+  { id: 'dürr',             name: 'Christian Dürr',              party: 'FDP', state: 'Niedersachsen',           position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1975, gender: 'männlich' },
+  { id: 'brüderle',         name: 'Rainer Brüderle',             party: 'FDP', state: 'Rheinland-Pfalz',         position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1945, gender: 'männlich' },
 
   // ── AfD ──────────────────────────────────────────────────────────────────
   { id: 'petry',            name: 'Frauke Petry',                party: 'AfD', state: 'Sachsen',                 position: 'Parteivorsitzende/r',      birthYear: 1975, gender: 'weiblich' },
@@ -178,6 +211,11 @@ export const POLITICIANS: Politician[] = [
     quote: '»Deutschland zuerst.«' },
   { id: 'chrupalla',        name: 'Tino Chrupalla',              party: 'AfD', state: 'Sachsen',                 position: 'Parteivorsitzende/r',      birthYear: 1975, gender: 'männlich' },
   { id: 'von-storch',       name: 'Beatrix von Storch',          party: 'AfD', state: 'Berlin',                  position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1971, gender: 'weiblich' },
+  { id: 'baumann',          name: 'Bernd Baumann',               party: 'AfD', state: 'Hamburg',                 position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1957, gender: 'männlich' },
+  { id: 'curio',            name: 'Gottfried Curio',             party: 'AfD', state: 'Bayern',                  position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1968, gender: 'männlich' },
+  { id: 'höcke',            name: 'Björn Höcke',                 party: 'AfD', state: 'Thüringen',               position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1972, gender: 'männlich',
+    quote: '»Deutschland braucht eine erinnerungspolitische Wende um 180 Grad.«' },
+  { id: 'krah',             name: 'Maximilian Krah',             party: 'AfD', state: 'Sachsen',                 position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1977, gender: 'männlich' },
 
   // ── Linke ────────────────────────────────────────────────────────────────
   { id: 'lafontaine',       name: 'Oskar Lafontaine',            party: 'Linke', state: 'Saarland',              position: 'Parteivorsitzende/r',      birthYear: 1943, gender: 'männlich',
@@ -189,10 +227,16 @@ export const POLITICIANS: Politician[] = [
   { id: 'bartsch',          name: 'Dietmar Bartsch',             party: 'Linke', state: 'Mecklenburg-Vorpommern', position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1958, gender: 'männlich' },
   { id: 'ramelow',          name: 'Bodo Ramelow',                party: 'Linke', state: 'Thüringen',             position: 'Ministerpräsident/in',     birthYear: 1956, gender: 'männlich',
     quote: '»Ich bin kein Kommunist, ich bin ein Christsozialist.«' },
+  { id: 'van-aken',         name: 'Jan van Aken',                party: 'Linke', state: 'Hamburg',              position: 'Parteivorsitzende/r',      birthYear: 1961, gender: 'männlich',
+    quote: '»Kein einziger Euro für Rüstung und Krieg.«' },
+  { id: 'reichinnek',       name: 'Heidi Reichinnek',            party: 'Linke', state: 'Niedersachsen',         position: 'Parteivorsitzende/r',      birthYear: 1988, gender: 'weiblich',
+    quote: '»Wir sind die Stimme derer, die sonst nicht gehört werden.«' },
 
   // ── BSW ──────────────────────────────────────────────────────────────────
   { id: 'wagenknecht',      name: 'Sahra Wagenknecht',           party: 'BSW', state: 'Nordrhein-Westfalen',     position: 'Parteivorsitzende/r',      birthYear: 1969, gender: 'weiblich',
     quote: '»Die Ampel ist die schlechteste Regierung, die dieses Land je hatte.«' },
+  { id: 'mohamed-ali',      name: 'Amira Mohamed Ali',           party: 'BSW', state: 'Hamburg',                 position: 'Parteivorsitzende/r',      birthYear: 1980, gender: 'weiblich' },
+  { id: 'ernst-k',          name: 'Klaus Ernst',                 party: 'BSW', state: 'Bayern',                  position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1954, gender: 'männlich' },
 
   // ── parteilos ─────────────────────────────────────────────────────────────
   { id: 'gauck',            name: 'Joachim Gauck',               party: 'parteilos', state: 'Mecklenburg-Vorpommern', position: 'Bundespräsident/in', birthYear: 1940, gender: 'männlich',
