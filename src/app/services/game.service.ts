@@ -34,6 +34,14 @@ export class GameService {
     this._gameOver() ? 0 : Math.max(0, 24 - this._guesses().length * 3)
   );
 
+  readonly nameHint = computed(() => {
+    if (this._gameOver() || this.remainingGuesses() > 3) return null;
+    return this._targetPolitician().name
+      .split('')
+      .map(c => c === ' ' ? '  ' : '_')
+      .join(' ');
+  });
+
   private pickDailyPolitician(): Politician {
     const today = new Date();
     const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();

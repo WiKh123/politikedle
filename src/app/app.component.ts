@@ -22,6 +22,7 @@ export class AppComponent {
   get endlessRound() { return this.gameService.endlessRound(); }
   get target()       { return this.gameService.targetPolitician(); }
   get photoBlur()    { return this.gameService.photoBlur(); }
+  get nameHint()     { return this.gameService.nameHint(); }
 
   switchToDaily()   { this.gameService.switchToDaily(); }
   switchToEndless() { this.gameService.switchToEndless(); }

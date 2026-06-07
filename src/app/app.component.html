@@ -57,6 +57,12 @@
     </div>
   </div>
 
+  <!-- Name hint: shown on last 3 tries -->
+  <div class="name-hint" *ngIf="nameHint && !gameOver">
+    <span class="name-hint-label">🔤 Tipp: Buchstabenanzahl</span>
+    <span class="name-hint-letters">{{ nameHint }}</span>
+  </div>
+
   <!-- Search input -->
   <app-search></app-search>
 
