@@ -47,6 +47,23 @@ export class GameService {
     }).join('   ');
   });
 
+  readonly knownAttributes = computed(() => {
+    const guesses = this._guesses();
+    if (guesses.length === 0) return null;
+    const t = this._targetPolitician();
+    return {
+      party:      guesses.some(g => g.party === 'correct')      ? t.party      : null,
+      state:      guesses.some(g => g.state === 'correct')      ? t.state      : null,
+      position:   guesses.some(g => g.position === 'correct')   ? t.position   : null,
+      birthYear:  guesses.some(g => g.birthYear === 'correct')  ? t.birthYear  : null,
+      gender:     guesses.some(g => g.gender === 'correct')     ? t.gender     : null,
+      religion:   guesses.some(g => g.religion === 'correct')   ? t.religion   : null,
+      beruf:      guesses.some(g => g.beruf === 'correct')      ? t.beruf      : null,
+      titel:      guesses.some(g => g.titel === 'correct')      ? t.titel      : null,
+      erstmandat: guesses.some(g => g.erstmandat === 'correct') ? t.erstmandat : null,
+    };
+  });
+
   private pickDailyPolitician(): Politician {
     const today = new Date();
     const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();

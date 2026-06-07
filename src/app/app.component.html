@@ -57,6 +57,49 @@
     </div>
   </div>
 
+  <!-- Known attributes summary -->
+  <div class="known-attrs" *ngIf="knownAttributes && !gameOver">
+    <span class="known-attrs-label">📋 Bekannte Attribute</span>
+    <div class="ka-grid">
+      <div class="ka-item" [class.ka-known]="knownAttributes.party">
+        <span class="ka-key">Partei</span>
+        <span class="ka-val">{{ knownAttributes.party ?? '?' }}</span>
+      </div>
+      <div class="ka-item" [class.ka-known]="knownAttributes.gender">
+        <span class="ka-key">Geschlecht</span>
+        <span class="ka-val">{{ knownAttributes.gender ?? '?' }}</span>
+      </div>
+      <div class="ka-item" [class.ka-known]="knownAttributes.state">
+        <span class="ka-key">Bundesland</span>
+        <span class="ka-val">{{ knownAttributes.state ?? '?' }}</span>
+      </div>
+      <div class="ka-item" [class.ka-known]="knownAttributes.position">
+        <span class="ka-key">Amt</span>
+        <span class="ka-val">{{ knownAttributes.position ?? '?' }}</span>
+      </div>
+      <div class="ka-item" [class.ka-known]="knownAttributes.birthYear">
+        <span class="ka-key">Geb.</span>
+        <span class="ka-val">{{ knownAttributes.birthYear ?? '?' }}</span>
+      </div>
+      <div class="ka-item" [class.ka-known]="knownAttributes.religion">
+        <span class="ka-key">Religion</span>
+        <span class="ka-val">{{ knownAttributes.religion ?? '?' }}</span>
+      </div>
+      <div class="ka-item" [class.ka-known]="knownAttributes.beruf">
+        <span class="ka-key">Beruf</span>
+        <span class="ka-val">{{ knownAttributes.beruf ?? '?' }}</span>
+      </div>
+      <div class="ka-item" [class.ka-known]="knownAttributes.titel">
+        <span class="ka-key">Titel</span>
+        <span class="ka-val">{{ knownAttributes.titel ?? '?' }}</span>
+      </div>
+      <div class="ka-item" [class.ka-known]="knownAttributes.erstmandat">
+        <span class="ka-key">1. Mandat</span>
+        <span class="ka-val">{{ knownAttributes.erstmandat ?? '?' }}</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Name hint: shown on last 3 tries -->
   <div class="name-hint" *ngIf="nameHint && !gameOver">
     <span class="name-hint-label">🔤 Tipp: Buchstabenanzahl</span>
