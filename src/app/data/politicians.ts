@@ -206,6 +206,10 @@ export const POLITICIANS: Politician[] = [
   { id: 'biedenkopf',       name: 'Kurt Biedenkopf',             party: 'CDU', state: 'Sachsen',                 position: 'Ministerpräsident/in',     birthYear: 1930, gender: 'männlich',
     religion: 'evangelisch',    beruf: 'Jurist',            titel: 'Prof. Dr.', erstmandat: 1976,
     quote: '»Sachsen ist das modernste Land in Deutschland.«' },
+  { id: 'voigt-mario',      name: 'Mario Voigt',                 party: 'CDU', state: 'Thüringen',               position: 'Ministerpräsident/in',     birthYear: 1977, gender: 'männlich',
+    religion: 'evangelisch',    beruf: 'Ökonom',            titel: 'keiner',   erstmandat: 1999 },
+  { id: 'güler',            name: 'Serap Güler',                 party: 'CDU', state: 'Nordrhein-Westfalen',     position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1980, gender: 'weiblich',
+    religion: 'konfessionslos', beruf: 'Journalist',        titel: 'keiner',   erstmandat: 2021 },
 
   // ── CSU ──────────────────────────────────────────────────────────────────
   { id: 'strauss',          name: 'Franz Josef Strauß',          party: 'CSU', state: 'Bayern',                  position: 'Ministerpräsident/in',     birthYear: 1915, gender: 'männlich',
@@ -258,6 +262,9 @@ export const POLITICIANS: Politician[] = [
     religion: 'evangelisch',    beruf: 'Lehrer/Akademiker', titel: 'keiner',   erstmandat: 1999 },
   { id: 'hofreiter',        name: 'Anton Hofreiter',             party: 'Grüne', state: 'Bayern',                position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1970, gender: 'männlich',
     religion: 'konfessionslos', beruf: 'Naturwissenschaftler', titel: 'Dr.',   erstmandat: 2005 },
+  { id: 'göring-eckardt',   name: 'Katrin Göring-Eckardt',       party: 'Grüne', state: 'Thüringen',             position: 'Bundestagspräsident/in',    birthYear: 1966, gender: 'weiblich',
+    religion: 'evangelisch',    beruf: 'Lehrer/Akademiker', titel: 'keiner',   erstmandat: 1999,
+    quote: '»Demokratie ist kein Selbstläufer.«' },
   { id: 'habeck',           name: 'Robert Habeck',               party: 'Grüne', state: 'Schleswig-Holstein',    position: 'Bundesminister/in',        birthYear: 1969, gender: 'männlich',
     religion: 'evangelisch',    beruf: 'Lehrer/Akademiker', titel: 'Dr.',      erstmandat: 2009,
     quote: '»Ich möchte nicht, dass wir in zehn Jahren fragen: Haben wir es gewusst?«' },
