@@ -266,14 +266,20 @@
   color: #f38ba8;
 }
 
-.name-hint-letters {
+.name-hint-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.name-hint-word {
   font-family: monospace;
   font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
   color: #cdd6f4;
-  word-break: break-all;
-  text-align: center;
+  white-space: nowrap;
 }
 
 // How to play

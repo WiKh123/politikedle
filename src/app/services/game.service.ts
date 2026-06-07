@@ -38,13 +38,15 @@ export class GameService {
     if (this._gameOver() || this.remainingGuesses() > 3) return null;
     const remaining = this.remainingGuesses();
     const words = this._targetPolitician().name.split(' ');
+    // Return an array – one string per word – so the template can render
+    // each word as a separate element with a clear visual gap between them.
     return words.map((word, wi) => {
       const revealFirst = wi === 0 && remaining <= 2;
       const revealLast  = wi === words.length - 1 && remaining <= 1;
       return word.split('').map((c, ci) =>
         (ci === 0 && (revealFirst || revealLast)) ? c : '_'
       ).join(' ');
-    }).join('   ');
+    });
   });
 
   readonly knownAttributes = computed(() => {
