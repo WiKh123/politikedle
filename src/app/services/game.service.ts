@@ -52,17 +52,50 @@ export class GameService {
     if (guesses.length === 0) return null;
     const t = this._targetPolitician();
     return {
-      party:      guesses.some(g => g.party === 'correct')      ? t.party      : null,
-      state:      guesses.some(g => g.state === 'correct')      ? t.state      : null,
-      position:   guesses.some(g => g.position === 'correct')   ? t.position   : null,
-      birthYear:  guesses.some(g => g.birthYear === 'correct')  ? t.birthYear  : null,
-      gender:     guesses.some(g => g.gender === 'correct')     ? t.gender     : null,
-      religion:   guesses.some(g => g.religion === 'correct')   ? t.religion   : null,
-      beruf:      guesses.some(g => g.beruf === 'correct')      ? t.beruf      : null,
-      titel:      guesses.some(g => g.titel === 'correct')      ? t.titel      : null,
-      erstmandat: guesses.some(g => g.erstmandat === 'correct') ? t.erstmandat : null,
+      party:      guesses.some(g => g.party === 'correct')    ? t.party    : null,
+      state:      guesses.some(g => g.state === 'correct')    ? t.state    : null,
+      position:   guesses.some(g => g.position === 'correct') ? t.position : null,
+      gender:     guesses.some(g => g.gender === 'correct')   ? t.gender   : null,
+      religion:   guesses.some(g => g.religion === 'correct') ? t.religion : null,
+      beruf:      guesses.some(g => g.beruf === 'correct')    ? t.beruf    : null,
+      titel:      guesses.some(g => g.titel === 'correct')    ? t.titel    : null,
+      birthYear:  this.yearBounds(guesses, 'birthYear'),
+      erstmandat: this.yearBounds(guesses, 'erstmandat'),
     };
   });
+
+  private yearBounds(
+    guesses: GuessComparison[],
+    field: 'birthYear' | 'erstmandat',
+  ): { display: string; isExact: boolean } {
+    const dirField = field === 'birthYear' ? 'birthYearDirection' : 'erstmandatDirection';
+    let lo = -Infinity, hi = Infinity;
+
+    for (const g of guesses) {
+      const result    = g[field];
+      const direction = g[dirField];
+      const year      = g.politician[field];
+
+      if (result === 'correct') return { display: String(year), isExact: true };
+
+      if (result === 'partial') {
+        if (direction === 'higher') { lo = Math.max(lo, year + 1); hi = Math.min(hi, year + 5); }
+        else                        { lo = Math.max(lo, year - 5); hi = Math.min(hi, year - 1); }
+      } else {
+        if (direction === 'higher') lo = Math.max(lo, year + 6);
+        else                        hi = Math.min(hi, year - 6);
+      }
+    }
+
+    let display: string;
+    if (lo !== -Infinity && hi !== Infinity) display = `${lo}–${hi}`;
+    else if (lo !== -Infinity)               display = `≥${lo}`;
+    else if (hi !== Infinity)                display = `≤${hi}`;
+    else                                     display = '?';
+
+    return { display, isExact: false };
+  }
+
 
   private pickDailyPolitician(): Politician {
     const today = new Date();

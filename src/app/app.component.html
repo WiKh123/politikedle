@@ -77,9 +77,11 @@
         <span class="ka-key">Amt</span>
         <span class="ka-val">{{ knownAttributes.position ?? '?' }}</span>
       </div>
-      <div class="ka-item" [class.ka-known]="knownAttributes.birthYear">
+      <div class="ka-item"
+           [class.ka-known]="knownAttributes.birthYear.isExact"
+           [class.ka-range]="!knownAttributes.birthYear.isExact && knownAttributes.birthYear.display !== '?'">
         <span class="ka-key">Geb.</span>
-        <span class="ka-val">{{ knownAttributes.birthYear ?? '?' }}</span>
+        <span class="ka-val">{{ knownAttributes.birthYear.display }}</span>
       </div>
       <div class="ka-item" [class.ka-known]="knownAttributes.religion">
         <span class="ka-key">Religion</span>
@@ -93,9 +95,11 @@
         <span class="ka-key">Titel</span>
         <span class="ka-val">{{ knownAttributes.titel ?? '?' }}</span>
       </div>
-      <div class="ka-item" [class.ka-known]="knownAttributes.erstmandat">
+      <div class="ka-item"
+           [class.ka-known]="knownAttributes.erstmandat.isExact"
+           [class.ka-range]="!knownAttributes.erstmandat.isExact && knownAttributes.erstmandat.display !== '?'">
         <span class="ka-key">1. Mandat</span>
-        <span class="ka-val">{{ knownAttributes.erstmandat ?? '?' }}</span>
+        <span class="ka-val">{{ knownAttributes.erstmandat.display }}</span>
       </div>
     </div>
   </div>
