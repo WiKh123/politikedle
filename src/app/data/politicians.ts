@@ -329,9 +329,9 @@ export const POLITICIANS: Politician[] = [
     religion: 'evangelisch',    beruf: 'Ökonom',            titel: 'keiner',   erstmandat: 1983 },
 
   // ── AfD ──────────────────────────────────────────────────────────────────
-  { id: 'petry',            name: 'Frauke Petry',                party: 'AfD', state: 'Sachsen',                 position: 'Parteivorsitzende/r',      birthYear: 1975, gender: 'weiblich',
+  { id: 'petry',            name: 'Frauke Petry',                party: 'parteilos', state: 'Sachsen',                 position: 'Parteivorsitzende/r',      birthYear: 1975, gender: 'weiblich',
     religion: 'evangelisch',    beruf: 'Naturwissenschaftler', titel: 'Dr.',   erstmandat: 2014 },
-  { id: 'meuthen',          name: 'Jörg Meuthen',                party: 'AfD', state: 'Baden-Württemberg',       position: 'Parteivorsitzende/r',      birthYear: 1961, gender: 'männlich',
+  { id: 'meuthen',          name: 'Jörg Meuthen',                party: 'parteilos', state: 'Baden-Württemberg',       position: 'Parteivorsitzende/r',      birthYear: 1961, gender: 'männlich',
     religion: 'konfessionslos', beruf: 'Lehrer/Akademiker', titel: 'Prof. Dr.', erstmandat: 2014 },
   { id: 'gauland',          name: 'Alexander Gauland',           party: 'AfD', state: 'Brandenburg',             position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1941, gender: 'männlich',
     religion: 'evangelisch',    beruf: 'Jurist',            titel: 'keiner',   erstmandat: 2014,
@@ -482,7 +482,7 @@ export const POLITICIANS: Politician[] = [
     religion: 'muslimisch',     beruf: 'Ökonom',            titel: 'keiner',   erstmandat: 2009 },
 
   // ── AfD (weitere) ──────────────────────────────────────────────────────────
-  { id: 'lucke',            name: 'Bernd Lucke',                 party: 'AfD', state: 'Hamburg',                 position: 'Parteivorsitzende/r',      birthYear: 1962, gender: 'männlich',
+  { id: 'lucke',            name: 'Bernd Lucke',                 party: 'parteilos', state: 'Hamburg',                 position: 'Parteivorsitzende/r',      birthYear: 1962, gender: 'männlich',
     religion: 'evangelisch',    beruf: 'Ökonom',            titel: 'Prof. Dr.', erstmandat: 2014 },
   { id: 'bystron',          name: 'Petr Bystron',                party: 'AfD', state: 'Bayern',                  position: 'MdB / Fraktionsvorsitzende/r', birthYear: 1972, gender: 'männlich',
     religion: 'konfessionslos', beruf: 'Unternehmer',       titel: 'keiner',   erstmandat: 2017 },
